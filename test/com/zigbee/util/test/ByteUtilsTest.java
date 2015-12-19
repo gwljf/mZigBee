@@ -56,4 +56,18 @@ public class ByteUtilsTest {
 		assertEquals((byte)0xFB, ByteUtils.setBit((byte) 0xFF, 2, false));
 	}
 	
+	@Test
+	public void testBoolToByte(){
+		assertEquals((byte)0x00, ByteUtils.boolToByte(false));
+		assertEquals((byte)0x01, ByteUtils.boolToByte(true));
+	}
+	
+	@Test
+	public void testByteToBool(){
+		assertEquals(false, ByteUtils.ByteToBool((byte) 0x00));
+		assertEquals(true, ByteUtils.ByteToBool((byte) 0x01));
+		assertEquals(false, ByteUtils.ByteToBool((byte) 0xAA));
+		assertEquals(true, ByteUtils.ByteToBool((byte) 0xFF));
+	}
+	
 }

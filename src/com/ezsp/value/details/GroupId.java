@@ -13,16 +13,13 @@ public class GroupId  implements Comparable<GroupId>{
 	private byte[] groupId;
 	
 	public GroupId(byte[] _groupId){
-		logger.trace("Begin Init GroupId (byte[] [{}])", ByteUtils.byteArrayToHex(_groupId));
 		if(_groupId.length != 2){
 			throw new IllegalArgumentException("GroupId should be two bytes.");
 		}		
 		this.groupId = _groupId;
-		logger.trace("Exit init GroupId");
 	}
 	
 	public void setGroupId(byte[] _groupId){
-		logger.trace("Enter into setGroupId method");
 		if(_groupId.length != 2){
 			throw new IllegalArgumentException("GroupId should be two bytes.");
 		}
@@ -30,7 +27,6 @@ public class GroupId  implements Comparable<GroupId>{
 			logger.info("GroupId changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_groupId)+"]");
 			this.groupId = _groupId;
 		}
-		logger.trace("Exit setGroupId method");
 	}
 	
 	public byte[] getGroupId(){
@@ -45,8 +41,7 @@ public class GroupId  implements Comparable<GroupId>{
 		return CommonValue.NotEqual;
 	}
 	
-	@Override
-	public String toString(){
-		return "["+ByteUtils.byteArrayToHex(this.groupId)+"]";
+	public String printDetails(){
+		return "{ GroupId : "+ByteUtils.byteArrayToHex(this.groupId)+"}";
 	}
 }

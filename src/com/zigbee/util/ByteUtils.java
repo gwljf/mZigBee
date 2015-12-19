@@ -74,4 +74,19 @@ public class ByteUtils {
 		logger.trace("Exit byteArrayToHex");
 		return sb.toString();
 	}
+	
+	public static byte boolToByte(boolean boolVal){
+		if(boolVal){
+			return (byte)0x01;
+		}
+		return (byte) 0x00;
+	}
+	
+	public static boolean ByteToBool(byte byteVal){
+		// only swith lsb to bool, 1 to true, 0 to false
+		if(1 == getBit(byteVal, 0)){
+			return true;
+		}
+		return false;
+	}
 }

@@ -4,8 +4,8 @@ public class SleepModes {
 
 	// 2 bits
 	
-	private byte lsb;
-	private byte msb;
+	private boolean lsb;
+	private boolean msb;
 	
 	public static final int RESERVED = 0;
 	public static final int POWER_DOWN = 1;
@@ -15,33 +15,42 @@ public class SleepModes {
 	public SleepModes(int mode){
 		switch(mode){
 			case  RESERVED:
-				lsb = 1;
-				msb = 1;
+				lsb = true;		//1
+				msb = true;		//1
 				break;
 			case POWER_DOWN:
-				lsb = 1;
-				msb = 0;
+				lsb = true;		//1
+				msb = false;	//0
 				break;
 			case DEEP_SLEEP:
-				lsb = 0;
-				msb = 1;
+				lsb = false;	//0
+				msb = true;		//1
 				break;
 			case IDLE:
-				lsb = 0;
-				msb =0;
+				lsb = false;	//0
+				msb =false;		//0
 				break;
 			default:
 				throw new IllegalArgumentException("Can't handle this sleep mode");
 		}
 	}
 
-	public byte getLsb() {
+	public boolean getLsb() {
 		return lsb;
 	}
 
-	public byte getMsb() {
+	public boolean getMsb() {
 		return msb;
 	}
 	
-	
+	public String printDetails() {
+		if(this.msb && this.lsb){
+			return "{ SleepMode : RESERVED }";
+		} else if(!this.msb && this.lsb){
+			return "{ SleepMode : POWER_DOWN }";
+		} else if(this.msb && !this.lsb){
+			return "{ SleepMode : DEEP_SLEEP }";
+		}
+		return "{ SleepMode : IDLE }";
+	}
 }

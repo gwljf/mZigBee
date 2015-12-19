@@ -13,18 +13,14 @@ public class EndPointId implements Comparable<EndPointId>{
 	private byte endpointId;
 	
 	public EndPointId(byte _endpointId){
-		logger.trace("Begin Init EndPointId (byte [{}])", _endpointId);	
 		this.endpointId = _endpointId;
-		logger.trace("Exit init EndPointId");
 	}
 	
 	public void setEndPointId(byte _endpointId){
-		logger.trace("Enter into setEndPointId method");
 		if(this.endpointId != _endpointId){
 			logger.info("EndPointId changed from {} to {}", this.toString(), "["+ByteUtils.byteToHex(_endpointId)+"]");
 			this.endpointId = _endpointId;
 		}
-		logger.trace("Exit setEndPointId method");
 	}
 	
 	public byte getEndPointId(){
@@ -39,9 +35,8 @@ public class EndPointId implements Comparable<EndPointId>{
 		return CommonValue.NotEqual;
 	}
 	
-	@Override
-	public String toString(){
-		return "["+ByteUtils.byteToHex(this.endpointId)+"]";
+	public String printDetails(){
+		return "{ EndPointId : "+ByteUtils.byteToHex(this.endpointId)+"}";
 	}
 
 }

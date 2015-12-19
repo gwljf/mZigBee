@@ -5,6 +5,7 @@ import com.ezsp.value.details.ClusterId;
 import com.ezsp.value.details.EndPointId;
 import com.ezsp.value.details.GroupId;
 import com.ezsp.value.details.SequenceNumber;
+import com.zigbee.util.CommonValue;
 
 public class EmberApsFrame {
 	
@@ -65,6 +66,19 @@ public class EmberApsFrame {
 
 	public SequenceNumber getSequenceNumber() {
 		return sequenceNumber;
+	}
+	
+	public String printDetails(){ 
+		return CommonValue.SWITCH_LINE+
+				"{ EmberApsFrame:"+CommonValue.SWITCH_LINE+
+				CommonValue.BLANK+this.appProfileId.printDetails()+CommonValue.COMMA_SWITCH_LINE+
+				CommonValue.BLANK+this.clusterId.printDetails()+CommonValue.COMMA_SWITCH_LINE+
+				CommonValue.BLANK+"srcEndpoint: ("+this.sourceEndpoint.printDetails()+")"+CommonValue.COMMA_SWITCH_LINE+
+				CommonValue.BLANK+"dstEndpoint: ("+this.destinationEndpoint.printDetails()+")"+CommonValue.COMMA_SWITCH_LINE+
+				CommonValue.BLANK+this.groupId.printDetails()+CommonValue.COMMA_SWITCH_LINE+
+				CommonValue.BLANK+this.options.printDetails()+CommonValue.COMMA_SWITCH_LINE+
+				CommonValue.BLANK+this.sequenceNumber.printDetails()+CommonValue.SWITCH_LINE+
+				"}";
 	}
 
 }

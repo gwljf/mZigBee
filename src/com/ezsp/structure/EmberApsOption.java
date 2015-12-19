@@ -7,6 +7,10 @@ package com.ezsp.structure;
 
 public class EmberApsOption {
 	
+	private int emberApsOption;
+	
+
+	
 	//No options.
 	public static final int EMBER_APS_OPTION_NONE = 0x0000;
 	
@@ -51,6 +55,42 @@ public class EmberApsOption {
 	fragments in the message.
 	  */
 	public static final int EMBER_APS_OPTION_FRAGMENT = 0x8000;
-			
+	
+	public EmberApsOption(int emberApsOptionType){
+		this.emberApsOption = emberApsOptionType;
+	}
+	
+	public int getEmberApsOption() {
+		return emberApsOption;
+	}
+
+	public String printDetails(){
+		switch(this.emberApsOption){
+			case EMBER_APS_OPTION_NONE:
+				return "{ EmberApsOption : EMBER_APS_OPTION_NONE}";
+			case EMBER_APS_OPTION_ENCRYPTION:
+				return "{ EmberApsOption : EMBER_APS_OPTION_ENCRYPTION}";
+			case EMBER_APS_OPTION_RETRY:
+				return "{ EmberApsOption : EMBER_APS_OPTION_RETRY}";
+			case EMBER_APS_OPTION_ENABLE_ROUTE_DISCOVERY:
+				return "{ EmberApsOption : EMBER_APS_OPTION_ENABLE_ROUTE_DISCOVERY}";
+			case EMBER_APS_OPTION_FORCE_ROUTE_DISCOVERY:
+				return "{ EmberApsOption : EMBER_APS_OPTION_FORCE_ROUTE_DISCOVERY}";
+			case EMBER_APS_OPTION_SOURCE_EUI64:
+				return "{ EmberApsOption : EMBER_APS_OPTION_SOURCE_EUI64}";
+			case EMBER_APS_OPTION_DESTINATION_EUI64:
+				return "{ EmberApsOption : EMBER_APS_OPTION_DESTINATION_EUI64}";
+			case EMBER_APS_OPTION_ENABLE_ADDRESS_DISCOVERY:
+				return "{ EmberApsOption : EMBER_APS_OPTION_ENABLE_ADDRESS_DISCOVERY}";
+			case EMBER_APS_OPTION_POLL_RESPONSE:
+				return "{ EmberApsOption : EMBER_APS_OPTION_POLL_RESPONSE}";
+			case EMBER_APS_OPTION_ZDO_RESPONSE_REQUIRED:
+				return "{ EmberApsOption : EMBER_APS_OPTION_ZDO_RESPONSE_REQUIRED}";
+			case EMBER_APS_OPTION_FRAGMENT:
+				return "{ EmberApsOption : EMBER_APS_OPTION_FRAGMENT}";
+			default:
+				throw new IllegalArgumentException("Can't handle this EmberApsOption type.");
+		}
+	}
 
 }

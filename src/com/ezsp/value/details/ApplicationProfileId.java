@@ -18,16 +18,13 @@ public class ApplicationProfileId implements Comparable<ApplicationProfileId>{
 	private byte[] profileId;
 	
 	public ApplicationProfileId(byte[] _profileId){
-		logger.trace("Begin Init ApplicationProfileId (byte[] [{}])", ByteUtils.byteArrayToHex(_profileId));
 		if(_profileId.length != 2){
 			throw new IllegalArgumentException("ProfileId should be two bytes.");
 		}		
 		this.profileId = _profileId;
-		logger.trace("Exit init ApplicationProfileId");
 	}
 	
 	public void setProfileId(byte[] _profileId){
-		logger.trace("Enter into setProfileId method");
 		if(_profileId.length != 2){
 			throw new IllegalArgumentException("ProfileId should be two bytes.");
 		}
@@ -35,7 +32,6 @@ public class ApplicationProfileId implements Comparable<ApplicationProfileId>{
 			logger.info("ProfileId changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_profileId)+"]");
 			this.profileId = _profileId;
 		}
-		logger.trace("Exit setProfileId method");
 	}
 	
 	public byte[] getProfileId(){
@@ -50,9 +46,8 @@ public class ApplicationProfileId implements Comparable<ApplicationProfileId>{
 		return CommonValue.NotEqual;
 	}
 	
-	@Override
-	public String toString(){
-		return "["+ByteUtils.byteArrayToHex(this.profileId)+"]";
+	public String printDetails(){
+		return "{ ApplicationProfileId : "+ByteUtils.byteArrayToHex(this.profileId)+"}";
 	}
 	
 }

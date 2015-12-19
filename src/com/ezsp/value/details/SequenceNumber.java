@@ -13,18 +13,14 @@ public class SequenceNumber implements Comparable<SequenceNumber>{
 	private byte sequenceNumber;
 	
 	public SequenceNumber(byte _sequenceNumber){
-		logger.trace("Begin Init SequenceNumber (byte [{}])", _sequenceNumber);	
 		this.sequenceNumber = _sequenceNumber;
-		logger.trace("Exit init SequenceNumber");
 	}
 	
 	public void setSequenceNumber(byte _sequenceNumber){
-		logger.trace("Enter into setSequenceNumber method");
 		if(this.sequenceNumber != _sequenceNumber){
 			logger.info("SequenceNumber changed from {} to {}", this.toString(), "["+ByteUtils.byteToHex(_sequenceNumber)+"]");
 			this.sequenceNumber = _sequenceNumber;
 		}
-		logger.trace("Exit setSequenceNumber method");
 	}
 	
 	public byte getSequenceNumber(){
@@ -39,8 +35,7 @@ public class SequenceNumber implements Comparable<SequenceNumber>{
 		return CommonValue.NotEqual;
 	}
 	
-	@Override
-	public String toString(){
-		return "["+ByteUtils.byteToHex(this.sequenceNumber)+"]";
+	public String printDetails(){
+		return "{ SequenceNumber : "+ByteUtils.byteToHex(sequenceNumber)+"}";
 	}
 }

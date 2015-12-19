@@ -14,16 +14,13 @@ public class ClusterId implements Comparable<ClusterId>{
 	private byte[] clusterId;
 	
 	public ClusterId(byte[] _clusterId){
-		logger.trace("Begin Init ClusterId (byte[] [{}])", ByteUtils.byteArrayToHex(_clusterId));
 		if(_clusterId.length != 2){
 			throw new IllegalArgumentException("ClusterId should be two bytes.");
 		}		
 		this.clusterId = _clusterId;
-		logger.trace("Exit init ClusterId");
 	}
 	
 	public void setClusterId(byte[] _clusterId){
-		logger.trace("Enter into setClusterId method");
 		if(_clusterId.length != 2){
 			throw new IllegalArgumentException("ClusterId should be two bytes.");
 		}
@@ -31,7 +28,6 @@ public class ClusterId implements Comparable<ClusterId>{
 			logger.info("ClusterId changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_clusterId)+"]");
 			this.clusterId = _clusterId;
 		}
-		logger.trace("Exit setClusterId method");
 	}
 	
 	public byte[] getClusterId(){
@@ -46,8 +42,7 @@ public class ClusterId implements Comparable<ClusterId>{
 		return CommonValue.NotEqual;
 	}
 	
-	@Override
-	public String toString(){
-		return "["+ByteUtils.byteArrayToHex(this.clusterId)+"]";
+	public String printDetails(){
+		return "{ ClusterId : "+ByteUtils.byteArrayToHex(this.clusterId)+"}";
 	}
 }

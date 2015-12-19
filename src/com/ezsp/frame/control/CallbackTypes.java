@@ -1,11 +1,11 @@
 package com.ezsp.frame.control;
 
-public class CallbakTypes {
+public class CallbackTypes {
 
 	// 2 bits
 	
-	private byte lsb;
-	private byte msb;
+	private boolean lsb;
+	private boolean msb;
 	
 	public static final int RESERVED = 0;
 	
@@ -14,36 +14,49 @@ public class CallbakTypes {
 	
 	// This response is a synchronous callback. It was sent in response to a callback command.
 	public static final int SYNCHRONOUS_CALLBACK = 2;
+	
+	// This response is not a callback.
 	public static final int NOT_CALLBACK = 3;
 	
-	public CallbakTypes(int mode){
+	public CallbackTypes(int mode){
 		switch(mode){
 			case  RESERVED:
-				lsb = 1;
-				msb = 1;
+				lsb = true;		//1
+				msb = true;		//1
 				break;
 			case ASYNCHRONOUS_CALLBACK:
-				lsb = 1;
-				msb = 0;
+				lsb = true;		//1
+				msb = false;	//0
 				break;
 			case SYNCHRONOUS_CALLBACK:
-				lsb = 0;
-				msb = 1;
+				lsb = false;	//0
+				msb = true;		//1
 				break;
 			case NOT_CALLBACK:
-				lsb = 0;
-				msb =0;
+				lsb = false;	//0
+				msb = false;	//0
 				break;
 			default:
 				throw new IllegalArgumentException("Can't handle this sleep mode");
 		}
 	}
 
-	public byte getLsb() {
+	public boolean getLsb() {
 		return lsb;
 	}
 
-	public byte getMsb() {
+	public boolean getMsb() {
 		return msb;
+	}
+	
+	public String printDetails(){
+		if(this.lsb && this.msb){
+			return "{ CallbackType : RESERVED}";
+		}else if(this.lsb && !this.msb){
+			return "{ CallbackType : ASYNCHRONOUS_CALLBACK}";
+		}else if(!this.lsb && this.msb){
+			return "{ CallbackType : SYNCHRONOUS_CALLBACK}";
+		}
+		return "{ CallbackType : NOT_CALLBACK}";
 	}
 }
