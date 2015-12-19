@@ -1,6 +1,14 @@
 package com.ezsp.structure;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.zigbee.util.ByteUtils;
+
 public class EzspConfigId {
+	
+	
+	private static Logger logger = LogManager.getLogger(EzspConfigId.class.getName());
 	
 	private byte ezspConfigId;
 	
@@ -11,29 +19,7 @@ public class EzspConfigId {
 	public byte getEzspConfigid(){
 		return this.ezspConfigId;
 	}
-	
-	public String printDetails(){
-		switch(this.ezspConfigId){
-			case EZSP_CONFIG_PACKET_BUFFER_COUNT:
-				return "{ EzspConfigId : EZSP_CONFIG_PACKET_BUFFER_COUNT }";
-			case EZSP_CONFIG_NEIGHBOR_TABLE_SIZE:
-				return "{ EzspConfigId : EZSP_CONFIG_NEIGHBOR_TABLE_SIZE }";
-			case EZSP_CONFIG_APS_UNICAST_MESSAGE_COUNT:
-				return "{ EzspConfigId : EZSP_CONFIG_APS_UNICAST_MESSAGE_COUNT }";
-			case EZSP_CONFIG_BINDING_TABLE_SIZE:
-				return "{ EzspConfigId : EZSP_CONFIG_BINDING_TABLE_SIZE }";
-			case EZSP_CONFIG_ADDRESS_TABLE_SIZE:
-				return "{ EzspConfigId : EZSP_CONFIG_ADDRESS_TABLE_SIZE }";
-			case EZSP_CONFIG_MULTICAST_TABLE_SIZE:
-				return "{ EzspConfigId : EZSP_CONFIG_MULTICAST_TABLE_SIZE }";
-			case EZSP_CONFIG_ROUTE_TABLE_SIZE:
-				return "{ EzspConfigId : EZSP_CONFIG_ROUTE_TABLE_SIZE }";
-				
-				default:
-					return null;
-					
-		}
-	}
+
 	
 	// The number of packet buffers available to the stack.
 	public static final byte EZSP_CONFIG_PACKET_BUFFER_COUNT = (byte)0x01;
@@ -156,6 +142,91 @@ public class EzspConfigId {
 	
 	
 	
+	public String printDetails(){
+		switch(this.ezspConfigId){
+			case EZSP_CONFIG_PACKET_BUFFER_COUNT:
+				return "{ EzspConfigId : EZSP_CONFIG_PACKET_BUFFER_COUNT }";
+			case EZSP_CONFIG_NEIGHBOR_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_NEIGHBOR_TABLE_SIZE }";
+			case EZSP_CONFIG_APS_UNICAST_MESSAGE_COUNT:
+				return "{ EzspConfigId : EZSP_CONFIG_APS_UNICAST_MESSAGE_COUNT }";
+			case EZSP_CONFIG_BINDING_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_BINDING_TABLE_SIZE }";
+			case EZSP_CONFIG_ADDRESS_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_ADDRESS_TABLE_SIZE }";
+			case EZSP_CONFIG_MULTICAST_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_MULTICAST_TABLE_SIZE }";
+			case EZSP_CONFIG_ROUTE_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_ROUTE_TABLE_SIZE }";	
+			case EZSP_CONFIG_DISCOVERY_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_DISCOVERY_TABLE_SIZE }";
+			case EZSP_CONFIG_BROADCAST_ALARM_DATA_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_BROADCAST_ALARM_DATA_SIZE }";
+			case EZSP_CONFIG_UNICAST_ALARM_DATA_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_UNICAST_ALARM_DATA_SIZE }";
+			case EZSP_CONFIG_STACK_PROFILE:
+				return "{ EzspConfigId : EZSP_CONFIG_STACK_PROFILE }";
+			case EZSP_CONFIG_SECURITY_LEVEL:
+				return "{ EzspConfigId : EZSP_CONFIG_SECURITY_LEVEL }";
+			case EZSP_CONFIG_MAX_HOPS:
+				return "{ EzspConfigId : EZSP_CONFIG_MAX_HOPS }";
+			case EZSP_CONFIG_MAX_END_DEVICE_CHILDREN:
+				return "{ EzspConfigId : EZSP_CONFIG_MAX_END_DEVICE_CHILDREN }";
+			case EZSP_CONFIG_INDIRECT_TRANSMISSION_TIMEOUT:
+				return "{ EzspConfigId : EZSP_CONFIG_INDIRECT_TRANSMISSION_TIMEOUT }";
+			case EZSP_CONFIG_END_DEVICE_POLL_TIMEOUT:
+				return "{ EzspConfigId : EZSP_CONFIG_END_DEVICE_POLL_TIMEOUT }";
+			case EZSP_CONFIG_MOBILE_NODE_POLL_TIMEOUT:
+				return "{ EzspConfigId : EZSP_CONFIG_MOBILE_NODE_POLL_TIMEOUT }";
+			case EZSP_CONFIG_RESERVED_MOBILE_CHILD_ENTRIES:
+				return "{ EzspConfigId : EZSP_CONFIG_RESERVED_MOBILE_CHILD_ENTRIES }";
+			case EZSP_CONFIG_TX_POWER_MODE:
+				return "{ EzspConfigId : EZSP_CONFIG_TX_POWER_MODE }";
+			case EZSP_CONFIG_DISABLE_RELAY:
+				return "{ EzspConfigId : EZSP_CONFIG_DISABLE_RELAY }";
+			case EZSP_CONFIG_TRUST_CENTER_ADDRESS_CACHE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_TRUST_CENTER_ADDRESS_CACHE_SIZE }";	
+			case EZSP_CONFIG_SOURCE_ROUTE_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_SOURCE_ROUTE_TABLE_SIZE }";
+			case EZSP_CONFIG_END_DEVICE_POLL_TIMEOUT_SHIFT:
+				return "{ EzspConfigId : EZSP_CONFIG_END_DEVICE_POLL_TIMEOUT_SHIFT }";
+			case EZSP_CONFIG_FRAGMENT_WINDOW_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_FRAGMENT_WINDOW_SIZE }";
+			case EZSP_CONFIG_FRAGMENT_DELAY_MS:
+				return "{ EzspConfigId : EZSP_CONFIG_FRAGMENT_DELAY_MS }";
+			case EZSP_CONFIG_KEY_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_KEY_TABLE_SIZE }";
+			case EZSP_CONFIG_APS_ACK_TIMEOUT:
+				return "{ EzspConfigId : EZSP_CONFIG_APS_ACK_TIMEOUT }";
+			case EZSP_CONFIG_ACTIVE_SCAN_DURATION:
+				return "{ EzspConfigId : EZSP_CONFIG_ACTIVE_SCAN_DURATION }";
+			case EZSP_CONFIG_END_DEVICE_BIND_TIMEOUT:
+				return "{ EzspConfigId : EZSP_CONFIG_END_DEVICE_BIND_TIMEOUT }";
+			case EZSP_CONFIG_PAN_ID_CONFLICT_REPORT_THRESHOLD:
+				return "{ EzspConfigId : EZSP_CONFIG_PAN_ID_CONFLICT_REPORT_THRESHOLD }";
+			case EZSP_CONFIG_REQUEST_KEY_TIMEOUT:
+				return "{ EzspConfigId : EZSP_CONFIG_REQUEST_KEY_TIMEOUT }";
+			case EZSP_CONFIG_CERTIFICATE_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_CERTIFICATE_TABLE_SIZE }";
+			case EZSP_CONFIG_APPLICATION_ZDO_FLAGS:
+				return "{ EzspConfigId : EZSP_CONFIG_APPLICATION_ZDO_FLAGS }";
+			case EZSP_CONFIG_BROADCAST_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_BROADCAST_TABLE_SIZE }";
+			case EZSP_CONFIG_MAC_FILTER_TABLE_SIZE:
+				return "{ EzspConfigId : EZSP_CONFIG_MAC_FILTER_TABLE_SIZE }";	
+			case EZSP_CONFIG_SUPPORTED_NETWORKS:
+				return "{ EzspConfigId : EZSP_CONFIG_SUPPORTED_NETWORKS }";
+			case EZSP_CONFIG_SEND_MULTICASTS_TO_SLEEPY_ADDRESS:
+				return "{ EzspConfigId : EZSP_CONFIG_SEND_MULTICASTS_TO_SLEEPY_ADDRESS }";
+			case EZSP_CONFIG_ZLL_GROUP_ADDRESSES:
+				return "{ EzspConfigId : EZSP_CONFIG_ZLL_GROUP_ADDRESSES }";
+			case EZSP_CONFIG_ZLL_RSSI_THRESHOLD:
+				return "{ EzspConfigId : EZSP_CONFIG_ZLL_RSSI_THRESHOLD }";
+			default:
+				logger.error("Can't handle this type of this type of EzspConfigId : {}", ByteUtils.byteToHex(this.ezspConfigId));
+				throw new IllegalArgumentException("Can't handle this type of EzspConfigId");
+		}
+	}
 	
 	
 	
