@@ -2,10 +2,16 @@ package com.ezsp.frame.packet.configuration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import com.ezsp.frame.EzspFrameParametersCmd;
-import com.ezsp.structure.EzspConfigId;
+import com.ezsp.named.values.EzspConfigId;
 import com.zigbee.util.ByteUtils;
 import com.zigbee.util.CommonValue;
+
+/**
+ * EzspConfigId configId : Identifies which configuration value to read.
+ * 
+ */
 
 public class GetConfigurationValueCmd  extends EzspFrameParametersCmd {
 	

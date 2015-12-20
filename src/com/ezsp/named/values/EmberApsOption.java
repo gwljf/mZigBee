@@ -1,4 +1,4 @@
-package com.ezsp.structure;
+package com.ezsp.named.values;
 
 /**
  * int16u, Options to use when sending a message.

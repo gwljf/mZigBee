@@ -1,10 +1,14 @@
-package com.ezsp.structure;
+package com.ezsp.named.values;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.zigbee.util.ByteUtils;
-
+/**
+ * 
+ * int8u : Identifies a configuration value.
+ *
+ */
 public class EzspConfigId {
 	
 	

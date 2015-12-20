@@ -1,5 +1,6 @@
 package com.ezsp.structure;
 
+import com.ezsp.named.values.EmberApsOption;
 import com.ezsp.value.details.ApplicationProfileId;
 import com.ezsp.value.details.ClusterId;
 import com.ezsp.value.details.EndPointId;
@@ -7,6 +8,18 @@ import com.ezsp.value.details.GroupId;
 import com.ezsp.value.details.SequenceNumber;
 import com.zigbee.util.CommonValue;
 
+/**
+ * EmberApsFrame (ZigBee APS frame parameters.) 
+ * 
+ * 1. int16u profileId : The application profile ID that describes the format of the message.
+ * 2. int16u clusterId : The cluster ID for this message.
+ * 3. int8u sourceEndpoint : The source endpoint.
+ * 4. int8u destinationEndpoint : The destination endpoint.
+ * 5. EmberApsOption options : A bitmask of options.
+ * 6. int16u groupId : The group ID for this message, if it is multicast mode.
+ * 7. int8u sequence : The sequence number.
+ *
+ */
 public class EmberApsFrame {
 	
 	// The application profile ID that describes the format of the message.

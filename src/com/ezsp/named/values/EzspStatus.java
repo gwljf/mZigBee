@@ -1,10 +1,13 @@
-package com.ezsp.structure;
+package com.ezsp.named.values;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import com.zigbee.util.ByteUtils;
 
+/**
+ * int8u : Status values used by EZSP.
+ *
+ */
 public class EzspStatus {
 	
 	private static Logger logger = LogManager.getLogger(EzspStatus.class.getName());

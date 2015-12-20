@@ -15,7 +15,7 @@ import com.zigbee.util.CommonValue;
  * int16u stackVersion : The version number of the stack.
  */
 
-public class VersionRsp  extends EzspFrameParametersRsp{
+public class VersionRsp extends EzspFrameParametersRsp{
 	
 	private static Logger logger = LogManager.getLogger(VersionRsp.class.getName());
 	
