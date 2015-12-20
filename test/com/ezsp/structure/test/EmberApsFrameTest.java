@@ -6,8 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
+import com.ezsp.named.values.EmberApsOption;
 import com.ezsp.structure.EmberApsFrame;
-import com.ezsp.structure.EmberApsOption;
 import com.ezsp.value.details.ApplicationProfileId;
 import com.ezsp.value.details.ClusterId;
 import com.ezsp.value.details.EndPointId;
