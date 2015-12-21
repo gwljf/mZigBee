@@ -21,7 +21,7 @@ public class GetConfigurationValueCmd  extends EzspFrameParametersCmd {
 	
 	public GetConfigurationValueCmd(EzspConfigId _ezspConfigId){
 		this.ezspConfigId = _ezspConfigId;
-		logger.info("Identifies configuration id: ({}) value to read..", ByteUtils.byteToHex(this.ezspConfigId.getEzspConfigid()));
+		logger.info("Identifies configuration id: ({}) value to read..", ByteUtils.byte2Hex(this.ezspConfigId.getEzspConfigid()));
 	}
 
 	public EzspConfigId getEzspConfigId(){
@@ -33,6 +33,6 @@ public class GetConfigurationValueCmd  extends EzspFrameParametersCmd {
 		return CommonValue.SWITCH_LINE +
 				"{ GetConfigurationValueCmd:" + CommonValue.SWITCH_LINE +
 				CommonValue.BLANK + this.ezspConfigId.printDetails() + CommonValue.SWITCH_LINE +
-				"}\n";
+				"}";
 	}
 }

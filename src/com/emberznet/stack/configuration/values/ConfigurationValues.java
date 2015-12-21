@@ -1,10 +1,33 @@
 package com.emberznet.stack.configuration.values;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.ezsp.named.values.EzspBoolean;
+import com.zigbee.util.ByteUtils;
 
+// int16u
 public class ConfigurationValues {
-
 	
+	private static Logger logger = LogManager.getLogger(ConfigurationValues.class.getName());
+	private byte[] configurationVal = new byte[2];
+	
+	public ConfigurationValues(byte[] _configurationVal){
+		if(_configurationVal.length != 2){
+			logger.error("Configuration Value should be 2 bytes.");
+			throw new IllegalArgumentException("Configuration Value should be 2 bytes.");
+		}
+		this.configurationVal = _configurationVal;
+	}
+	
+	public byte[] getConfigurationVal() {
+		return configurationVal;
+	}
+
+	public String printDetails(){
+		int configurationValueType = ByteUtils.byteArray2Int(this.configurationVal);
+		String ret = "{ Configuration Value : "+configurationValueType+" }";
+		return ret;
+	}
 	/**
 	 * The number of packet buffers available to the stack.
 	 * min : 5

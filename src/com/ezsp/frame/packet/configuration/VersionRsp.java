@@ -53,7 +53,7 @@ public class VersionRsp extends EzspFrameParametersRsp{
 				CommonValue.BLANK + this.protocolVersion.printDetails() + CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK + this.stackType.printDetails() + CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK + this.stackVersion.printDetails() + CommonValue.SWITCH_LINE +
-				"}\n";
+				"}";
 	}
 
 }

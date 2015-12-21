@@ -63,7 +63,7 @@ public class FrameControlRsp  implements FrameControl{
 				CommonValue.BLANK + this.callbackPending.printDetails() + CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK + this.truncated.printDetails() + CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK + this.overflow.printDetails() + CommonValue.COMMA_SWITCH_LINE +
-				"}\n";
+				"}";
 	}
 
 	@Override

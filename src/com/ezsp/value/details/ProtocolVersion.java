@@ -18,7 +18,7 @@ public class ProtocolVersion {
 	
 	public void setProtocolVersion(byte _protocolVersion){
 		if(this.protocolVersion != _protocolVersion){
-			logger.info("Protocol Version changed from {} to {}", this.toString(), "["+ByteUtils.byteToHex(_protocolVersion)+"]");
+			logger.info("Protocol Version changed from {} to {}", this.toString(), "["+ByteUtils.byte2Hex(_protocolVersion)+"]");
 			this.protocolVersion = _protocolVersion;
 		}
 	}
@@ -29,6 +29,6 @@ public class ProtocolVersion {
 
 
 	public String printDetails(){
-		return "{ ProtocolVersion : "+ByteUtils.byteToHex(this.protocolVersion)+"}";
+		return "{ ProtocolVersion : "+ByteUtils.byte2Hex(this.protocolVersion)+"}";
 	}
 }

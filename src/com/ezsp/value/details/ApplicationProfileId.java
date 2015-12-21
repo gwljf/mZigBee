@@ -29,7 +29,7 @@ public class ApplicationProfileId implements Comparable<ApplicationProfileId>{
 			throw new IllegalArgumentException("ProfileId should be two bytes.");
 		}
 		if(this.profileId != _profileId){
-			logger.info("ProfileId changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_profileId)+"]");
+			logger.info("ProfileId changed from {} to {}", this.toString(), "["+ByteUtils.byteArray2Hex(_profileId)+"]");
 			this.profileId = _profileId;
 		}
 	}
@@ -47,7 +47,7 @@ public class ApplicationProfileId implements Comparable<ApplicationProfileId>{
 	}
 	
 	public String printDetails(){
-		return "{ ApplicationProfileId : "+ByteUtils.byteArrayToHex(this.profileId)+"}";
+		return "{ ApplicationProfileId : "+ByteUtils.byteArray2Hex(this.profileId)+"}";
 	}
 	
 }

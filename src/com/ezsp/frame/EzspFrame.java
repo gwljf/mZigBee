@@ -24,7 +24,7 @@ public class EzspFrame {
 				CommonValue.BLANK + this.frameControl.printDetails() + CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK + this.frameId.printDetails() + CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK + this.ezspFrameParameters.printDetails() + CommonValue.COMMA_SWITCH_LINE +
-				"}\n";
+				"}";
 	}
 
 	public SequenceNumber getSequenceNumber() {

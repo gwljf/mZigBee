@@ -18,7 +18,7 @@ public class SequenceNumber implements Comparable<SequenceNumber>{
 	
 	public void setSequenceNumber(byte _sequenceNumber){
 		if(this.sequenceNumber != _sequenceNumber){
-			logger.info("SequenceNumber changed from {} to {}", this.toString(), "["+ByteUtils.byteToHex(_sequenceNumber)+"]");
+			logger.info("SequenceNumber changed from {} to {}", this.toString(), "["+ByteUtils.byte2Hex(_sequenceNumber)+"]");
 			this.sequenceNumber = _sequenceNumber;
 		}
 	}
@@ -36,6 +36,6 @@ public class SequenceNumber implements Comparable<SequenceNumber>{
 	}
 	
 	public String printDetails(){
-		return "{ SequenceNumber : "+ByteUtils.byteToHex(sequenceNumber)+"}";
+		return "{ SequenceNumber : "+ByteUtils.byte2Hex(sequenceNumber)+"}";
 	}
 }

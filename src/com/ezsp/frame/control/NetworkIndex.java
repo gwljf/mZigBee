@@ -15,8 +15,8 @@ public class NetworkIndex {
 		if(((_msb!=(byte)0x01)&&(_msb!=(byte)0x00)) || ((_lsb!=(byte)0x01)&&(_lsb!=(byte)0x00))){
 			logger.warn("NetworkIndex lsb and msb should be 0x00 or 0x01");
 		}
-		this.lsb = ByteUtils.ByteToBool(_lsb);
-		this.msb = ByteUtils.ByteToBool(_msb);
+		this.lsb = ByteUtils.byte2Bool(_lsb);
+		this.msb = ByteUtils.byte2Bool(_msb);
 	}
 	
 	public NetworkIndex(boolean _msb, boolean _lsb){
@@ -29,8 +29,8 @@ public class NetworkIndex {
 			logger.fatal("NetworkIndex lsb and msb should be 0 or 1");
 			return;
 		}
-		this.lsb = ByteUtils.ByteToBool((byte)_lsb);
-		this.msb = ByteUtils.ByteToBool((byte)_msb);
+		this.lsb = ByteUtils.byte2Bool((byte)_lsb);
+		this.msb = ByteUtils.byte2Bool((byte)_msb);
 	}
 	
 	public boolean getLsb() {

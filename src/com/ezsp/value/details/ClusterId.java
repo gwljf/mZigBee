@@ -25,7 +25,7 @@ public class ClusterId implements Comparable<ClusterId>{
 			throw new IllegalArgumentException("ClusterId should be two bytes.");
 		}
 		if(this.clusterId != _clusterId){
-			logger.info("ClusterId changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_clusterId)+"]");
+			logger.info("ClusterId changed from {} to {}", this.toString(), "["+ByteUtils.byteArray2Hex(_clusterId)+"]");
 			this.clusterId = _clusterId;
 		}
 	}
@@ -43,6 +43,6 @@ public class ClusterId implements Comparable<ClusterId>{
 	}
 	
 	public String printDetails(){
-		return "{ ClusterId : "+ByteUtils.byteArrayToHex(this.clusterId)+"}";
+		return "{ ClusterId : "+ByteUtils.byteArray2Hex(this.clusterId)+"}";
 	}
 }

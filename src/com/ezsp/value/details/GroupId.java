@@ -24,7 +24,7 @@ public class GroupId  implements Comparable<GroupId>{
 			throw new IllegalArgumentException("GroupId should be two bytes.");
 		}
 		if(this.groupId != _groupId){
-			logger.info("GroupId changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_groupId)+"]");
+			logger.info("GroupId changed from {} to {}", this.toString(), "["+ByteUtils.byteArray2Hex(_groupId)+"]");
 			this.groupId = _groupId;
 		}
 	}
@@ -42,6 +42,6 @@ public class GroupId  implements Comparable<GroupId>{
 	}
 	
 	public String printDetails(){
-		return "{ GroupId : "+ByteUtils.byteArrayToHex(this.groupId)+"}";
+		return "{ GroupId : "+ByteUtils.byteArray2Hex(this.groupId)+"}";
 	}
 }

@@ -28,8 +28,9 @@ public class FrameControlTest {
 		NetworkIndex networkIndex1 = new NetworkIndex(1,0);
 		SleepModes sleepMode1 = new SleepModes(SleepModes.IDLE);
 		FrameControlCmd frameControlCmd1 = new FrameControlCmd(networkIndex1, sleepMode1);
-		assertEquals(frameControlCmdStr1, frameControlCmd1.printDetails());
 		logger.debug(frameControlCmd1.printDetails());
+		assertEquals(frameControlCmdStr1, frameControlCmd1.printDetails());
+		
 		
 		String frameControlCmdStr2 = "\n{ FrameControlCmd:\n" +
                 "\t{ NetworkIndex : (msb:0),(lsb:1) },\n" +
@@ -37,9 +38,10 @@ public class FrameControlTest {
                 "}";
 		NetworkIndex networkIndex2 = new NetworkIndex(0,1);
 		SleepModes sleepMode2 = new SleepModes(SleepModes.DEEP_SLEEP);
-		FrameControlCmd frameControlCmd2 = new FrameControlCmd(networkIndex2, sleepMode2);	
-		assertEquals(frameControlCmdStr2, frameControlCmd2.printDetails());
+		FrameControlCmd frameControlCmd2 = new FrameControlCmd(networkIndex2, sleepMode2);
 		logger.debug(frameControlCmd2.printDetails());
+		assertEquals(frameControlCmdStr2, frameControlCmd2.printDetails());
+		
 	}
 	
 	@Test

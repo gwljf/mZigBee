@@ -227,7 +227,7 @@ public class EzspConfigId {
 			case EZSP_CONFIG_ZLL_RSSI_THRESHOLD:
 				return "{ EzspConfigId : EZSP_CONFIG_ZLL_RSSI_THRESHOLD }";
 			default:
-				logger.error("Can't handle this type of this type of EzspConfigId : {}", ByteUtils.byteToHex(this.ezspConfigId));
+				logger.error("Can't handle this type of this type of EzspConfigId : {}", ByteUtils.byte2Hex(this.ezspConfigId));
 				throw new IllegalArgumentException("Can't handle this type of EzspConfigId");
 		}
 	}

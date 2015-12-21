@@ -324,7 +324,7 @@ public class EzspStatus {
 			case EZSP_ASH_NO_ERROR:
 				return "{ EzspStatus : EZSP_ASH_NO_ERROR}";				
 			default:
-				logger.error("Can't handle this type of this type of EzspStatus : {}", ByteUtils.byteToHex(this.ezspStatus));
+				logger.error("Can't handle this type of this type of EzspStatus : {}", ByteUtils.byte2Hex(this.ezspStatus));
 				throw new IllegalArgumentException("Can't handle this type of EzspStatus");	
 		}
 	}

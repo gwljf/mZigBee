@@ -28,7 +28,7 @@ public class StackVersion {
 			throw new IllegalArgumentException("StackVersion should be two bytes.");
 		}
 		if(this.stackVersion != _stackVersion){
-			logger.info("StackVersion changed from {} to {}", this.toString(), "["+ByteUtils.byteArrayToHex(_stackVersion)+"]");
+			logger.info("StackVersion changed from {} to {}", this.toString(), "["+ByteUtils.byteArray2Hex(_stackVersion)+"]");
 			this.stackVersion = _stackVersion;
 		}
 	}
@@ -39,6 +39,6 @@ public class StackVersion {
 
 	
 	public String printDetails(){
-		return "{ StackVersion : "+ByteUtils.byteArrayToHex(this.stackVersion)+"}";
+		return "{ StackVersion : "+ByteUtils.byteArray2Hex(this.stackVersion)+"}";
 	}
 }

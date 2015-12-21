@@ -21,7 +21,7 @@ public class StackType {
 	
 	public void setStackType(byte _stackType){
 		if(this.stackType != _stackType){
-			logger.info("StackType changed from {} to {}", this.toString(), "["+ByteUtils.byteToHex(_stackType)+"]");
+			logger.info("StackType changed from {} to {}", this.toString(), "["+ByteUtils.byte2Hex(_stackType)+"]");
 			this.stackType = _stackType;
 		}
 	}
@@ -32,6 +32,6 @@ public class StackType {
 
 
 	public String printDetails(){
-		return "{ StackType : "+ByteUtils.byteToHex(this.stackType)+"}";
+		return "{ StackType : "+ByteUtils.byte2Hex(this.stackType)+"}";
 	}
 }

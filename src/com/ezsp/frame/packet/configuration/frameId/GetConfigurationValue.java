@@ -18,6 +18,6 @@ public class GetConfigurationValue implements FrameId{
 	
 	@Override
 	public String printDetails(){
-		return "{ FrameId : GetConfigurationValue (0x00)}";
+		return "{ FrameId : GetConfigurationValue (0x52)}";
 	}
 }

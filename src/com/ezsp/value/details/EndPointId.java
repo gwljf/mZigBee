@@ -18,7 +18,7 @@ public class EndPointId implements Comparable<EndPointId>{
 	
 	public void setEndPointId(byte _endpointId){
 		if(this.endpointId != _endpointId){
-			logger.info("EndPointId changed from {} to {}", this.toString(), "["+ByteUtils.byteToHex(_endpointId)+"]");
+			logger.info("EndPointId changed from {} to {}", this.toString(), "["+ByteUtils.byte2Hex(_endpointId)+"]");
 			this.endpointId = _endpointId;
 		}
 	}
@@ -36,7 +36,7 @@ public class EndPointId implements Comparable<EndPointId>{
 	}
 	
 	public String printDetails(){
-		return "{ EndPointId : "+ByteUtils.byteToHex(this.endpointId)+"}";
+		return "{ EndPointId : "+ByteUtils.byte2Hex(this.endpointId)+"}";
 	}
 
 }

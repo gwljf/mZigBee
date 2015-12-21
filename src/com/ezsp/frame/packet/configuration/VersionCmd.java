@@ -20,7 +20,7 @@ public class VersionCmd extends EzspFrameParametersCmd{
 	
 	public VersionCmd(ProtocolVersion _desiredProtocolVersion){
 		this.desiredProtocolVersion = _desiredProtocolVersion;
-		logger.info("Set _desired Protocol Version as {}.", ByteUtils.byteToHex(this.desiredProtocolVersion.getProtocolVersion()));
+		logger.info("Set _desired Protocol Version as {}.", ByteUtils.byte2Hex(this.desiredProtocolVersion.getProtocolVersion()));
 	}
 
 	public ProtocolVersion getDesiredProtocolVersion(){
@@ -32,7 +32,7 @@ public class VersionCmd extends EzspFrameParametersCmd{
 		return CommonValue.SWITCH_LINE +
 				"{ VersionCmd:" + CommonValue.SWITCH_LINE +
 				CommonValue.BLANK + this.desiredProtocolVersion.printDetails() + CommonValue.SWITCH_LINE +
-				"}\n";
+				"}";
 	}
 
 }

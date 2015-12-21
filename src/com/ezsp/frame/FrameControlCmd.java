@@ -59,7 +59,7 @@ public class FrameControlCmd implements FrameControl{
 				"{ FrameControlCmd:"+CommonValue.SWITCH_LINE +
 				CommonValue.BLANK+this.networkIndex.printDetails()+CommonValue.COMMA_SWITCH_LINE +
 				CommonValue.BLANK+this.sleepMode.printDetails()+CommonValue.SWITCH_LINE +
-				"}\n";
+				"}";
 	}
 
 	@Override
